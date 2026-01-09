@@ -1,6 +1,6 @@
 import torch
-from model import PetCNN
+from model import BetterCNN
 
-model = PetCNN()
+model = BetterCNN()
 model.load_state_dict(torch.load("pet_cnn.pth", map_location="cpu"))
 model.eval()
