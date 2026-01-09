@@ -1,7 +1,8 @@
 import torch
 from torch import nn
 from tqdm.auto import tqdm
-
+from torchvision import transforms
+from PIL import Image
 
 def train_step(model: torch.nn.Module,
                dataset: torch.utils.data.DataLoader,
