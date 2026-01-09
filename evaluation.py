@@ -120,3 +120,22 @@ def model_eval(model:torch.nn.Module,
     pre_loss /= len(dataloader)
     print(pre_loss)
     return test_pred
+
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor()
+])
+
+def preprocess_image(image):
+    image = transform(image).unsqueeze(0)
+    return image
+
+
+def predict_image(image):
+    image = preprocess_image(image)
+    with torch.no_grad():
+        output = model(image)
+        pred = torch.argmax(output, dim=1).item()
+
+    classes = ["Cat", "Dog"]
+    return classes[pred]
