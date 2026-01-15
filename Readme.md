@@ -13,7 +13,7 @@ This project demonstrates a complete deep learning workflow—from raw image dat
 * **Built with PyTorch:** Utilizes `torch` for tensor computations and `torchvision` for pre-built datasets and transformations.
 * **Data Augmentation:** Robust preprocessing including random horizontal flips, rotations, and color jittering to prevent overfitting.
 * **Optimized Performance:** Supports **CUDA GPU** acceleration for significantly faster training.
-* **Modular Design:** Separated scripts for data loading (`data_setup.py`), model architecture (`model_builder.py`), and training (`engine.py`).
+* **Modular Design:** Separated scripts for data loading (`utils.py`), model architecture (`model.py`), and training (`engine.py`).
 * **Detailed Metrics:** Outputs training/validation loss and accuracy curves for performance monitoring.
 
 
@@ -22,16 +22,17 @@ This project demonstrates a complete deep learning workflow—from raw image dat
 * **Language:** Python 3.10+
 * **Deep Learning:** PyTorch
 * **Computer Vision:** Torchvision, OpenCV
-* **Data Analysis:** NumPy, Matplotlib, Seaborn
+* **Data Analysis/Visulization:** NumPy, Matplotlib, PIL
 
 ## 📂 Project Structure
 ```text
 ├── data/               # Dataset directory (train/test)
 ├── models/             # Saved model weights (.pth files)
 ├── src/                
-│   ├── data_setup.py   # Data loaders and transforms
-│   ├── model.py        # CNN architecture definition
-│   ├── train.py        # Main training script
-│   └── utils.py        # Helper functions (plotting, saving)
+├── app.py              # Data loaders and transforms
+├── utils.py            # train, test, model_evaluate functions
+├── model.py            # CNN architecture definition
+├── predict.py          # Prediction script
+└── model.ipynb         # Model train test evaluation Notebook
 ├── requirements.txt    # Project dependencies
 └── README.md
